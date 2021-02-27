@@ -29,6 +29,11 @@ Contents:
     list-style: none;
     display: block;
     text-align: center;
+    border-bottom: 1px solid #ccc;
+}
+
+#primary-nav ul:first-child {
+    border-top: 1px solid #ccc;
 }
 
 #primary-nav ul li a {
@@ -55,13 +60,19 @@ Contents:
 /* Screens larger than mobile */
 @media (min-width: 40.0rem) {
     #primary-nav ul {
-        display: block;
-        visibility: visible;
+        display: block !important;
+        visibility: visible !important;
+        float: right;
+    }
+
+    #primary-nav ul:first-child {
+        border-top: none;
     }
 
     #primary-nav ul li {
         display: inline-block;
         text-align: left;
+        border-bottom: none;
     }
 
     #branding #hamburger {
