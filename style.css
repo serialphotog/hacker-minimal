@@ -1,0 +1,14 @@
+@charset "UTF-8"
+
+/*
+Theme Name: Hacker Minimal
+Theme URI: https://hackeradam.com
+Version: 1.0
+Author: Adam Thompson
+Author URI: https://hackeradam.com
+Description: A minimalistic Wordpress theme for technically geared personal blogs.
+*/
+
+body {
+    font-size: 100%;
+}
