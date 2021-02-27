@@ -31,6 +31,13 @@ if (!function_exists('hackerminimal_setup')) {
             'script',
             'navigation-widgets'
         ));
+
+        // Register the navigation menus
+        register_nav_menus(
+            array(
+                'primary'   => 'Primary Menu'
+            )
+        );
     }
 }
 add_action('after_setup_theme', 'hackerminimal_setup');
@@ -44,6 +51,12 @@ function hackerminimal_scripts() {
     // The theme's styling
     wp_enqueue_style('hackerminimal', get_template_directory_uri() . '/style.css', 
         array('milligram'), wp_get_theme()->get('Version'));
+
+    // The main theme JavaScript
+    wp_register_script('hackerminimal', 
+        get_template_directory_uri() . '/static/js/hackerminimal.js', array(),
+        wp_get_theme()->get('Version'), true);
+    wp_enqueue_script('hackerminimal');
 }
 add_action('wp_enqueue_scripts', 'hackerminimal_scripts');
 
