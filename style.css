@@ -11,6 +11,7 @@ Description: A minimalistic Wordpress theme for technically geared personal blog
 Contents:
 
 1) Header
+2) Footer
 */
 
 /* === Header === */
@@ -95,4 +96,23 @@ Contents:
         display: none;
         visibility: hidden;
     }
+}
+
+/* === Footer === */
+
+#footer {
+    width: 100%;
+    background-color: #eee;
+}
+
+#footer #footer-inner {
+    padding: 2.5rem;
+}
+
+#footer #footer-inner #copyright {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    font-size: 1.4rem;
 }
