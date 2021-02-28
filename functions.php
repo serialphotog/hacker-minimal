@@ -44,6 +44,10 @@ add_action('after_setup_theme', 'hackerminimal_setup');
 
 // Handle the scripts and styles
 function hackerminimal_scripts() {
+    // The CSS reset
+    wp_enqueue_style('reset', get_template_directory_uri() . '/static/css/reset.css',
+        array(), '2.0');
+
     // The Milligram CSS framework
     wp_enqueue_style('milligram', get_template_directory_uri() . '/static/css/milligram.min.css',
         array(), '1.4.1');
