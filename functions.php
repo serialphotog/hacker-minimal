@@ -42,6 +42,20 @@ if (!function_exists('hackerminimal_setup')) {
 }
 add_action('after_setup_theme', 'hackerminimal_setup');
 
+// Performs the widget initialization
+function hackerminimal_widgets_init() {
+    register_sidebar(array(
+        'name'          => 'Primary',
+        'id'            => 'primary-sidebar',
+        'description'   => 'The primary sidebar for posts.',
+        'before_widget' => '<section id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</section>',
+        'before_title'  => '<h2 class="widget-title">',
+        'after_titble'  => '</h2>',
+    ));
+}
+add_action('widgets_init', 'hackerminimal_widgets_init');
+
 // Handle the scripts and styles
 function hackerminimal_scripts() {
     // The CSS reset
