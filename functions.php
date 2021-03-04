@@ -3,6 +3,10 @@
 // Perform the basic theme setup
 if (!function_exists('hackerminimal_setup')) {
     function hackerminimal_setup() {
+        // Localization support
+        load_theme_textdomain('hackerminimal', 
+            get_template_directory() . '/langauges');
+
         // Automatically add feed links to the head
         add_theme_support('automatic-feed-links');
         
@@ -35,7 +39,7 @@ if (!function_exists('hackerminimal_setup')) {
         // Register the navigation menus
         register_nav_menus(
             array(
-                'primary'   => 'Primary Menu'
+                'primary'   => __('Primary Menu', 'hackerminimal'),
             )
         );
     }
@@ -45,9 +49,9 @@ add_action('after_setup_theme', 'hackerminimal_setup');
 // Performs the widget initialization
 function hackerminimal_widgets_init() {
     register_sidebar(array(
-        'name'          => 'Primary',
+        'name'          => __('Primary', 'hackerminimal'),
         'id'            => 'primary-sidebar',
-        'description'   => 'The primary sidebar for posts.',
+        'description'   => __('The primary sidebar for posts.', 'hackerminimal'),
         'before_widget' => '<section id="%1$s" class="widget %2$s">',
         'after_widget'  => '</section>',
         'before_title'  => '<h2 class="widget-title">',
